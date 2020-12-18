@@ -1,0 +1,24 @@
+{
+  "name": "testmenproj",
+  "version": "1.0.0",
+  "description": "TestProject",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Neolokeshkr/MEN_Stack.git"
+  },
+  "author": "DevLoki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neolokeshkr/MEN_Stack/issues"
+  },
+  "homepage": "https://github.com/Neolokeshkr/MEN_Stack#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
