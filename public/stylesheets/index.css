@@ -5,5 +5,7 @@
 body{
     background-color: aqua;
 }
-
-
+.navbar-brand{
+    padding: 0;
+    margin: 0;
+}
