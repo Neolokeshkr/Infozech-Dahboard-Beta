@@ -159,7 +159,7 @@
       <!-- Main Content -->
       <!-- Tables - Common Component/Product Versions -->
       <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-10">
-        <table class="table table-hover">
+        <table class="table table-hover" id="table1">
           <caption>List of Products</caption>
           <thead class="thead-light">
             <tr>
@@ -174,7 +174,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr onclick="insert()" id="GDL">
+            <tr onclick="insertGDLVersion()" id="GDL">
               <td>1</td>
               <th scope="row">GDL</th>
               <td></td>
@@ -184,7 +184,7 @@
               <td>2.4.0</td>
               <td></td>
             </tr>
-            <tr>
+            <tr onclick="insertCFL()" id="CFL">
               <td>2</td>
               <th scope="row">CFL</th>
               <td></td>
@@ -194,7 +194,7 @@
               <td>3.4.0</td>
               <td></td>
             </tr>
-            <tr>
+            <tr class="">
               <td>3</td>
               <th scope="row">User Management</th>
               <td></td>
@@ -204,15 +204,25 @@
               <td>1.3.1</td>
               <td></td>
             </tr>
-            <tr>
+            <tr onclick="toggleiRecon()">
               <td>4</td>
-              <th scope="row">iRecon</th>
+              <th scope="row" >iRecon</th>
               <td></td>
               <td>2.13.0</td>
               <td>17-Nov-20</td>
               <td>10-Dec-20</td>
               <td>2.12.0</td>
               <td>16-Sept-20</td>
+            </tr>
+            <tr class="toggleiRecon" id="iRecon">
+              <td>Node.JS <br> 8.9.4</td>
+              <td>MongoDB <br> 3.2</td>
+              <td>Postgres <br>NA</td>
+              <td>Oracle <br>12c or below</td>
+              <td>.NET <br> 8.9.4</td>
+              <td>MongoDB <br> 3.2</td>
+              <td>Postgres <br>NA</td>
+              <td>Oracle <br>12c or below</td>
             </tr>
             <tr>
               <td>5</td>
@@ -288,11 +298,67 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-    <script>
-      function insert() {
-  $("#GDL").append("<p>Hi</p>");
-}
-    </script>
+
+
+
+
+  <script>
+    function insert() {
+      $("#GDL").append("<p>Hi</p>");
+    }
+
+    // Inserting row
+    function insertGDLVersion() {
+      var table = document.getElementById("table1");
+      console.log(table);
+
+      var row = table.insertRow(2);
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+
+      cell1.innerHTML = "test1";
+      cell2.innerHTML = "test2";
+    }
+
+    // function insertCFL(){
+    //   document.getElementById("table1").insertRow(3).innerHTML = '<tr><td>Hi</td></tr>';
+    // }
+
+    function insertCFL() {
+      $("<tr><td>Hi</td></tr>").insertAfter($("#CFL"))
+    }
+
+    // Hide and Show elements
+    $(document).ready(function () {
+      $("#hide").click(function () {
+        $("p").hide();
+      });
+      $("#show").click(function () {
+        $("p").show();
+      });
+    });
+
+    // Toggle Class
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("p").toggleClass("main");
+      });
+    });
+
+    // iReconToggle
+    function toggleiRecon(){
+      $("#iRecon").toggleClass("toggleiRecon")
+    }
+
+
+  </script>
+
+  <style>
+    .toggleiRecon{
+      display: none;
+    }
+  </style>
 
 </body>
 
