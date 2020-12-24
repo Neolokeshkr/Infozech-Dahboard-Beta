@@ -40,3 +40,8 @@ header{
     transition: all 10s;
       
 } */
+
+.table{
+  margin: auto;
+  width: 75% !important;
+}
